@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta content="text/html" charset="UTF-8">
+    <title>docker命令</title>
+    <link rel="stylesheet" href="css\index.css">
+</head>
+         
+<body style="background-color: rgb(53, 53, 52);">
+    <div>
+        <p style="color: rgb(216, 210, 210);">-i：保持标准输入保持打开状态，一般与 -t 连用<br>
+            -t：分配一个伪终端，一般与 -i 连用<br>
+            -d：在后台运行容器，并且打印容器id<br>
+            常规操作：<br>
+            1.docker引擎启动：systemctl start docker<br>         
+            2.拉取镜像：docker pull 镜像名<br>
+            3.查看镜像：docker images<br>                 	  
+            4.删除镜像：docker rmi -f 镜像名<br> 
+            5.创建容器：docker run -it -d --name 创建的容器名 镜像名<br>
+            6.查看所有容器：docker ps -a<br>
+            7.以交互式方式启动容器：docker run -it 镜像名 /bin/bash<br>
+            8.进入容器：docker attach 容器id<br><br>
+     
+            vi /etc/yum.repos.d/nginx.repo       //编辑用于安装Nging软件包的yum源定义文件<br>
+            //文件内容如下：<br>
+            [nginx]<br>
+            name=nginx repo<br>
+            baseurl=http://nginx.org/packages/centos/$releasever/$basearch/<br>
+            gpgcheck=0<br>
+            enabled=1<br>
+            //文件内容结束<br>
+            yum install -y nginx       //下载nginx软件<br>
+            docker commit 基于容器的id 构建新镜像的名字      //基于容器构建镜像，例如：<br>
+            docker commit d3d26303b71c centos-with-nginx<br>
+            docker history 镜像名   //查看该镜像的构建历史，例如：<br>
+            docker history centos-with-nginx<br>
+            docker attach 容器id   //进入容器<br>
+        </p>
+    </div>
+</body>
+
+</html>
