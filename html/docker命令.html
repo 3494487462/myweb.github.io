@@ -22,7 +22,7 @@
             7.以交互式方式启动容器：docker run -it 镜像名 /bin/bash<br>
             8.进入容器：docker attach 容器id<br><br>
      
-            vi /etc/yum.repos.d/nginx.repo       //编辑用于安装Nging软件包的yum源定义文件<br>
+            vi /etc/yum.repos.d/nginx.repo&nbsp;&nbsp;&nbsp;&nbsp;//编辑用于安装Nging软件包的yum源定义文件<br>
             //文件内容如下：<br>
             [nginx]<br>
             name=nginx repo<br>
@@ -30,12 +30,12 @@
             gpgcheck=0<br>
             enabled=1<br>
             //文件内容结束<br>
-            yum install -y nginx       //下载nginx软件<br>
-            docker commit 基于容器的id 构建新镜像的名字      //基于容器构建镜像，例如：<br>
+            yum install -y nginx&nbsp;&nbsp;&nbsp;&nbsp;//下载nginx软件<br>
+            docker commit 基于容器的id 构建新镜像的名字&nbsp;&nbsp;&nbsp;&nbsp;//基于容器构建镜像，例如：<br>
             docker commit d3d26303b71c centos-with-nginx<br>
-            docker history 镜像名   //查看该镜像的构建历史，例如：<br>
+            docker history 镜像名&nbsp;&nbsp;&nbsp;&nbsp;//查看该镜像的构建历史，例如：<br>
             docker history centos-with-nginx<br>
-            docker attach 容器id   //进入容器<br>
+            docker attach 容器id&nbsp;&nbsp;&nbsp;&nbsp;//进入容器<br>
         </p>
     </div>
 </body>
